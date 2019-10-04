@@ -10,12 +10,12 @@
 		
 	}
 
-	#borde_rigth{
+	.borde_rigth{
 		border-right-color: red;
 		border-width: 3px;
 	}
 
-	#borde_top{
+	.borde_top{
 		border-top-color: red;
 		border-width: 3px;
 	}	
@@ -47,9 +47,9 @@
 		foreach ($fila as $casilla) {
 			$contadorCasilla +=1;
 			if ($contadorCasilla == 3 || $contadorCasilla == 6){
-				echo "<td id='borde_rigth' borde=1>".$casilla."</td>";
+				echo "<td class='borde_rigth' borde=1>".$casilla."</td>";
 			}else if ($contadorFila == 4 || $contadorFila == 7){
-				echo "<td id='borde_top' borde=1>".$casilla."</td>";
+				echo "<td class='borde_top' borde=1>".$casilla."</td>";
 			}else{
 				echo "<td>".$casilla."</td>";
 			}	
