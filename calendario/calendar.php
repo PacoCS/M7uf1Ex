@@ -12,6 +12,9 @@
         $daysOfTheMonth = date("t");
         $dias = 1;
         $dia =1;
+        $month_start = strtotime('first day of month', time());
+        $firstDayOfTheMonth = date('w', $month_start);
+        
 
         echo "<table border=1 width=294>";
         echo "<tr><th colspan=7> $nameMonth $year </th></tr>";
@@ -24,8 +27,11 @@
             echo "<tr></tr>";
             
             for ($contadorDia=0; $contadorDia <7 ; $contadorDia++) { 
-                if($dias<$dayOfTheWeek || $dia>$daysOfTheMonth){
+                if($dias<$firstDayOfTheMonth || $dia>$daysOfTheMonth){
                     echo "<td> </td>";
+                }else if($dia==$day){
+                    echo "<td bgcolor='cyan' align=center> $dia </td>";
+                    $dia+=1;
                 }else{
                     echo "<td> $dia </td>";
                     $dia +=1;
